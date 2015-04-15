@@ -1,1 +1,6 @@
 You log goes in this  file.
+Start: Tuesday, 14 Apr 2015 21:30:24
+End: Tuesday, 14 Apr 2015 22:10:24
+Tasks; During today I got everything set up, got a feel for the console, and got the bar functions done
+
+

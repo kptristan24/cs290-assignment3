@@ -13,7 +13,9 @@
 */
 
 //your code here
-
+function uselessFunction(){
+	return null;
+}
 //end your code
 
 var bar = 'not a function';
@@ -30,8 +32,34 @@ var barType = typeof bar;
 */
 
 //your code here
+var bar = function(array){
+	
+	
+	for(i = 0; i < array.length; i++){
+		if(typeof array[0] == "number"){
+			array[i] = array[i] * 2;
+		} else {
+			return false;
+		}
+	}
+	return true;
+};
 
 //end your code
+/* working version
+var bar = function(array){
+	
+	
+	
+	for(i = 0; i < array.length; i++){
+		array[i] = array[i] * 2;
+	}
+	return true;
+};
+
+*/
+
+
 
 /**
 * Creates a new GitLog
