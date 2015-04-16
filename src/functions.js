@@ -33,11 +33,12 @@ var barType = typeof bar;
 
 //your code here
 var bar = function(array){
-	
-	
+	//For each object in the array...
 	for(i = 0; i < array.length; i++){
+		//If array value is a number
 		if(typeof array[0] == "number"){
 			array[i] = array[i] * 2;
+		//Else spit back an error
 		} else {
 			return false;
 		}
@@ -46,19 +47,6 @@ var bar = function(array){
 };
 
 //end your code
-/* working version
-var bar = function(array){
-	
-	
-	
-	for(i = 0; i < array.length; i++){
-		array[i] = array[i] * 2;
-	}
-	return true;
-};
-
-*/
-
 
 
 /**
@@ -68,7 +56,7 @@ var bar = function(array){
 * @property {Date} date - the date of the commit as a JS Date object
 * @property {string} message - the commit message
 */
-function GitLog(hash, date, message) {
+function GitLog(hash, date, message){
     this.hash = hash;
     this.date = date;
     this.message = message;
@@ -94,5 +82,26 @@ function GitLog(hash, date, message) {
 */
 
 //your code here
+function parseGit(array){
+	//For each object in the array...
+	for(i = 0; i < array.length; i++){
+		//Parse the hash value
+		split_holder = array[i].split(" ");
+		hash = split_holder[0];
+		
+		//Parse the date
+		date = split_holder[1] + " " + split_holder[2] + " " + split_holder[3] + " " + split_holder[4] + " " + split_holder[5] + " " + split_holder[6];
+		date = new Date(date);
+		
+		//Parse the message
+		split_holder = array[i].split("\"");
+		message = split_holder[1];
+		
+		//Store the new object back into the array
+		array[i] = new GitLog(hash, date, message);
+	}
+	
+	return array;
+}
 
 //end your code
